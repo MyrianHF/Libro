@@ -45,7 +45,7 @@ public class Libro {
      * Devuelve detalles sobre el libro.
      */
     public String getDetalles() {
-       return titulo + autor + numeroPaginas;
+       return "Titulo: " + titulo + "/ Autor: " + autor + "/ Número de páginas: " + numeroPaginas;
     }
     /**
      * Imprime nombre del autor.
