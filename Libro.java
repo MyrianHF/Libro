@@ -87,13 +87,20 @@ public class Libro {
      */
     public String getDetalles() {
         String numReferencia = "";
+        String libroTexto = "";
        if (numeroReferencia.length() > 0) {
            numReferencia = numeroReferencia;
        }
        else {
            numReferencia = "ZZZ";
        }
-        return "Titulo: " + titulo + "/ Autor: " + autor + "/ Nº págs.: " + numeroPaginas + "/ Nº ref.: " + numReferencia + "/ Nº veces prestado: " + vecesPrestado + "/ Libro de texto: " + esLibroDeTexto;
+       if (esLibroDeTexto == true) {
+            libroTexto = "Si es libro de texto";
+        }
+        else {
+            libroTexto = "No es libro de texto";
+        }
+        return "Titulo: " + titulo + "/ Autor: " + autor + "/ Nº págs.: " + numeroPaginas + "/ Nº ref.: " + numReferencia + "/ Nº veces prestado: " + vecesPrestado + " / " + libroTexto;
     }
     /**
      * Imprime nombre del autor.
@@ -115,12 +122,17 @@ public class Libro {
         System.out.println("Nombre del autor: " + autor);
         System.out.println("Número de páginas: " + numeroPaginas);
         System.out.println("Número de veces prestado: " + vecesPrestado);
-        System.out.println("Libro de texto: " + esLibroDeTexto);
         if (numeroReferencia != "") {
             System.out.println("Número de referencia: " + numeroReferencia);
         }
         else {
             System.out.println("Número de referencia: ZZZ");
+        }
+        if (esLibroDeTexto == true) {
+            System.out.println("Si es un libro de texto.");
+        }
+        else {
+            System.out.println("No es un libro de texto.");
         }
     }
 }
