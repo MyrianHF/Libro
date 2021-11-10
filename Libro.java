@@ -13,6 +13,7 @@ public class Libro {
     private String autor;
     private String titulo;
     private int numeroPaginas;
+    private String numeroReferencia;
 
     /**
      * Fija el autor y el titulo del libro a los dados como parametro
@@ -22,6 +23,7 @@ public class Libro {
         autor = autorLibro;
         titulo = tituloLibro;
         numeroPaginas = numeroDePaginas;
+        numeroReferencia = "";
     }
     /**
      * Devuelve el nombre del autor del libro.
@@ -42,10 +44,34 @@ public class Libro {
        return numeroPaginas;
     }
     /**
+     * Devuelve el número de referencia del libro.
+     */
+    public String getNumeroReferencia() {
+       return numeroReferencia;
+    }
+    /**
+     * Establece número de referencia.
+     */
+    public void setNumeroReferencia(String numeroDeReferencia) {
+       if (numeroDeReferencia.length() >= 3) {
+           numeroReferencia = numeroDeReferencia;
+       }
+       else {
+           System.out.println("Error: caracteres del número de referencia insuficiente");
+       }
+    }
+    /**
      * Devuelve detalles sobre el libro.
      */
     public String getDetalles() {
-       return "Titulo: " + titulo + "/ Autor: " + autor + "/ Número de páginas: " + numeroPaginas;
+        String numReferencia = "";
+       if (numeroReferencia.length() > 0) {
+           numReferencia = numeroReferencia;
+       }
+       else {
+           numReferencia = "ZZZ";
+       }
+        return "Titulo: " + titulo + "/ Autor: " + autor + "/ Número de páginas: " + numeroPaginas + "/ Número de referencia: " + numReferencia;
     }
     /**
      * Imprime nombre del autor.
@@ -66,5 +92,11 @@ public class Libro {
         System.out.println("Título del libro: " + titulo);
         System.out.println("Nombre del autor: " + autor);
         System.out.println("Número de páginas: " + numeroPaginas);
+        if (numeroReferencia != "") {
+            System.out.println("Número de referencia: " + numeroReferencia);
+        }
+        else {
+            System.out.println("Número de referencia: ZZZ");
+        }
     }
 }
