@@ -15,6 +15,7 @@ public class Libro {
     private int numeroPaginas;
     private String numeroReferencia;
     private int vecesPrestado;
+    private boolean esLibroDeTexto;
 
     /**
      * Fija el autor y el titulo del libro a los dados como parametro
@@ -26,6 +27,7 @@ public class Libro {
         numeroPaginas = numeroDePaginas;
         numeroReferencia = "";
         vecesPrestado = 0;
+        esLibroDeTexto = false;
     }
     /**
      * Devuelve el nombre del autor del libro.
@@ -41,6 +43,12 @@ public class Libro {
     }
     /**
      * Devuelve el número de páginas del libro.
+     */
+    public boolean getSiEsLibroDeTexto() {
+       return esLibroDeTexto;
+    }
+    /**
+     * Devuelve si el libro es de texto.
      */
     public int getNumeroPaginas() {
        return numeroPaginas;
@@ -85,7 +93,7 @@ public class Libro {
        else {
            numReferencia = "ZZZ";
        }
-        return "Titulo: " + titulo + "/ Autor: " + autor + "/ Nº págs.: " + numeroPaginas + "/ Nº ref.: " + numReferencia + "/ Nº veces prestado: " + vecesPrestado;
+        return "Titulo: " + titulo + "/ Autor: " + autor + "/ Nº págs.: " + numeroPaginas + "/ Nº ref.: " + numReferencia + "/ Nº veces prestado: " + vecesPrestado + "/ Libro de texto: " + esLibroDeTexto;
     }
     /**
      * Imprime nombre del autor.
@@ -107,6 +115,7 @@ public class Libro {
         System.out.println("Nombre del autor: " + autor);
         System.out.println("Número de páginas: " + numeroPaginas);
         System.out.println("Número de veces prestado: " + vecesPrestado);
+        System.out.println("Libro de texto: " + esLibroDeTexto);
         if (numeroReferencia != "") {
             System.out.println("Número de referencia: " + numeroReferencia);
         }
